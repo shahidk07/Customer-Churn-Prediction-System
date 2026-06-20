@@ -1,0 +1,25 @@
+{
+  "name": "customer-churn-prediction-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx @tailwindcss/cli -i ./churn_project/predictor/static/css/input.css -o ./churn_project/predictor/static/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahidk07/Customer-Churn-Prediction-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahidk07/Customer-Churn-Prediction-System/issues"
+  },
+  "homepage": "https://github.com/shahidk07/Customer-Churn-Prediction-System#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.3.1"
+  }
+}
