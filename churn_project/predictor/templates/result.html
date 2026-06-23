@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,18 @@
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
 </head>
 <body class="bg">
-    <h2 class="pt-10 text-center font-bold text-3xl">Customer Churn Prediction</h2>
+    <h1 class="pt-10 text-center font-bold text-3xl">Customer Churn Prediction Result</h2>
+        <br>
+      
+            {% if prediction == 1 %}
+            <h2 class="text-center text-red-600 text-2xl font-bold">
+                Customer is likely to churn.
+            </h2>
+            {% else %}
+            <h2 class="text-center text-green-600 text-2xl font-bold">
+                Customer is not likely to churn.
+            </h2>
+            {% endif %}
+
 </body>
 </html>

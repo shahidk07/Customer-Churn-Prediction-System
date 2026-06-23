@@ -10,9 +10,9 @@
 </head>
 
 <body class="bg">
-    <h2 class="pt-10 text-center font-bold text-3xl">Customer Churn Prediction</h2>
+    <h2 class="pt-10 text-center font-bold text-3xl">Customer Churn Prediction update</h2>
     <div class="border-2 border-blue-400 rounded-lg p-6 w-212.5 mx-auto mt-6 bg-white shadow-md">
-        <form method="post" action="/collect_data/" class="grid grid-cols-2 gap-x-8 gap-y-4 ">
+        <form method="post" action="/predict/" class="grid grid-cols-2 gap-x-8 gap-y-4 ">
             {% csrf_token %}
             <label for="gender" class="font-medium text-gray-700 mb-1 block">Gender</label>
             <select name="gender" id=""

@@ -90,30 +90,25 @@ def preprocess(data):
             
     import pandas as pd
     df = pd.DataFrame([processed_data])
-    pd.set_option("display.max_columns", None)
-    print(df.head())
-    return processed_data
+    return df
 
 def dashboard(request):
     
     return render(request,"dashboard.html")
 
 @require_POST
-def collect_data(request):
+def predict(request):
+
+    # first collect the processed data
     form_data=request.POST
-    preprocess(form_data)
-    return HttpResponse("Data received")
-
-
-@require_POST
-def predict():
-    pass
-
-# 'senior_citizen',
-# 'partner',
-# 'dependents',
-# 'tenure',
-# 'phone_service',
-# 'paperless_billing',
-# 'monthly_charges',
-# 'total_charges',
+    processed_data=preprocess(form_data)
+    
+    #import ml model
+    import joblib
+    model = joblib.load("../model/churn_model.pkl")
+    #make prediction
+    prediction=model.predict(processed_data)[0]
+    return render(request,"result.html",{
+        "prediction":prediction
+    })
+    
