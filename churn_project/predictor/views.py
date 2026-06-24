@@ -105,7 +105,10 @@ def predict(request):
     
     #import ml model
     import joblib
-    model = joblib.load("../model/churn_model.pkl")
+    import os
+    from django.conf import settings
+    model_path = os.path.join(settings.BASE_DIR, "..", "model", "churn_model.pkl")
+    model = joblib.load(model_path)
     #make prediction
     prediction=model.predict(processed_data)[0]
     return render(request,"result.html",{
